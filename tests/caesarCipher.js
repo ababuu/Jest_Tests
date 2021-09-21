@@ -7,10 +7,22 @@ function decrypt(key,message){
 
 }
 function lettersToDigits(message){
-    const letters=message.split('');
-    console.log(letters);
+    const digits=[];
+    for(let i=0;i<=message.length;i++){
+        const digit=message.charCodeAt(i) - 97;
+        digits.push(digit);
+    }
+    return digits;
 }
-lettersToDigits('ababu');
+function digitsToLetters(digits){
+    const letters=[];
+    digits.forEach((digit)=>{
+        const letter=String.fromCharCode(97 + Number(digit));
+        letters.push(letter);
+    });
+    const word=letters.join('');
+    console.log(word);
+}
 
 
 module.exports= {encrypt,decrypt};
