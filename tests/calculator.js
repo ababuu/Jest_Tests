@@ -6,5 +6,4 @@ const calculator={
         return b=0? null: a/b; 
     }
 }
-
 module.exports=calculator;
