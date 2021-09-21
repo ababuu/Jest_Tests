@@ -9,3 +9,6 @@ test('subtracts two numbers',()=>{
 test('multiplies two numbers',()=>{
     expect(calculator.multiply(1,2)).toBe(2);
 });
+test('divides two non-zero numbers',()=>{
+    expect(calculator.divide(4,2)).toBe(2);
+});
