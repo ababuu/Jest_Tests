@@ -1,6 +1,11 @@
-import { expect, test } from '@jest/globals';
-import {add} from './calculator';
+const calculator =require('./calculator');
 
 test('adds two numbers',()=>{
-    expect(add(1,2)).toBe(3);
-})
+    expect(calculator.add(1,2)).toBe(3);
+});
+test('subtracts two numbers',()=>{
+    expect(calculator.subtract(2,1)).toBe(1);
+});
+test('multiplies two numbers',()=>{
+    expect(calculator.multiply(1,2)).toBe(2);
+});
