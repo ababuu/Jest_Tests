@@ -12,3 +12,6 @@ test('multiplies two numbers',()=>{
 test('divides two non-zero numbers',()=>{
     expect(calculator.divide(4,2)).toBe(2);
 });
+test('returns null when the second digit is zero',()=>{
+    expect(calculator.divide(4,0)).toBe(null);
+});
