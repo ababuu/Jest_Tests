@@ -1,13 +1,18 @@
 
-const punctuations=['!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','^','`','{','|','}','~'];
+const punctuations=['!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','^','`','{','|','}','~',' '];
 function encrypt(key,message){
     const convertedDigits=lettersToDigits(message);
     const encryptedDigits=convertedDigits.map((val)=>{
+        let charCode=val+key;
         if(punctuations.includes(val)) return val;
-        return val+key;
+        if(((charCode)>90 && (charCode)<96) || ((charCode)>122 && (charCode)<300)){
+            return charCode-26;
+        }
+        else{
+            return charCode;
+        }
     });
     const encryptedMessage=digitsToLetters(encryptedDigits);
-    console.log(encryptedDigits);
     return encryptedMessage;
 }
 
@@ -22,7 +27,7 @@ function lettersToDigits(message){
             digit=message.charAt(i);
         }
         else{
-            digit=message.charCodeAt(i) - 97;
+            digit=message.charCodeAt(i);
         }
         digits.push(digit);
     }
@@ -37,12 +42,11 @@ function digitsToLetters(d){
             letter=digit;
         }
         else{
-            letter=String.fromCharCode(97 + Number(digit));
+        letter=String.fromCharCode(Number(digit));
         }
         letters.push(letter);
     });
     const word=letters.join('');
     return word;
 }
-
 module.exports= encrypt;

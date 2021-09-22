@@ -12,8 +12,11 @@ test('keeping the same case',()=>{
 test('keeps punctuations the same',()=>{
     expect(encrypt(5,'hello!')).toBe('mjqqt!');
 })
-test.skip('wrapping',()=>{
-    expect(encrypt(1,'a')).toBe('z');
+test('works with spaces',()=>{
+    expect(encrypt(5,'hello there')).toBe('mjqqt ymjwj');
+});
+test('wrapping',()=>{
+    expect(encrypt(1,'z')).toBe('a');
 });
 test.skip('decrypts messages with a key of 2',()=>{
     expect(decrypt(2,'jgnnq')).toBe('hello')
