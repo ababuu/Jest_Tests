@@ -5,7 +5,7 @@ function encrypt(key,message){
     const encryptedDigits=convertedDigits.map((val)=>{
         let charCode=val+key;
         if(punctuations.includes(val)) return val;
-        if(((charCode)>90 && (charCode)<96) || ((charCode)>122 && (charCode)<300)){
+        if(((charCode)>90 && (charCode)<97) || ((charCode)>122 && (charCode)<300)){
             return charCode-26;
         }
         else{
@@ -17,7 +17,19 @@ function encrypt(key,message){
 }
 
 function decrypt(key,message){
-
+    const convertedDigits=lettersToDigits(message);
+    const decryptedDigits=convertedDigits.map((val)=>{
+        let charCode=val-key;
+        if(punctuations.includes(val)) return val;
+        if(((charCode)>90 && (charCode)<96) || ((charCode)>0 && (charCode)<65)){
+            return charCode+26;
+        }
+        else{
+            return charCode;
+        }
+    });
+    const decryptedMessage=digitsToLetters(decryptedDigits);
+    return decryptedMessage;
 }
 function lettersToDigits(message){
     let digits=[];
@@ -49,4 +61,5 @@ function digitsToLetters(d){
     const word=letters.join('');
     return word;
 }
-module.exports= encrypt;
+decrypt(2,'jgnnq');
+module.exports= {encrypt,decrypt};
