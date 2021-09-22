@@ -6,16 +6,16 @@ test('encrypts messages with a key of 2',()=>{
 test('encrypts messages with a key of 5',()=>{
     expect(encrypt(5,'hello')).toBe('mjqqt')
 });
-test('keeping the same case',()=>{
+test('encryption: keeping the same case',()=>{
     expect(encrypt(5,'HeLLo')).toBe('MjQQt')
 })
-test('keeps punctuations the same',()=>{
+test('encryption: keeps punctuations the same',()=>{
     expect(encrypt(5,'hello!')).toBe('mjqqt!');
 })
-test('works with spaces',()=>{
+test('encryption: works with spaces',()=>{
     expect(encrypt(5,'hello there')).toBe('mjqqt ymjwj');
 });
-test('wrapping',()=>{
+test('encryption: wrapping',()=>{
     expect(encrypt(1,'z')).toBe('a');
 });
 test.skip('decrypts messages with a key of 2',()=>{
@@ -24,9 +24,15 @@ test.skip('decrypts messages with a key of 2',()=>{
 test.skip('decrypts messages with a key of 5',()=>{
     expect(decrypt(5,'mjqqt')).toBe('hello')
 });
-test.skip('keeping the same case',()=>{
+test.skip('decryption: keeping the same case',()=>{
     expect(decrypt(5,'MjQQt')).toBe('HeLLo')
 })
+test.skip('decryption: keeps punctuations the same',()=>{
+    expect(encrypt(5,'mjqqt!')).toBe('hello!');
+})
+test.skip('decryption: works with spaces',()=>{
+    expect(encrypt(5,'hello there')).toBe('mjqqt ymjwj');
+});
 test.skip('wrapping',()=>{
-    expect(decrypt(1,'z')).toBe('a');
+    expect(decrypt(1,'a')).toBe('z');
 });
