@@ -21,10 +21,10 @@ test('encryption: wrapping',()=>{
 test('decrypts messages with a key of 2',()=>{
     expect(decrypt(2,'jgnnq')).toBe('hello')
 });
-test.skip('decrypts messages with a key of 5',()=>{
+test('decrypts messages with a key of 5',()=>{
     expect(decrypt(5,'mjqqt')).toBe('hello')
 });
-test.skip('decryption: keeping the same case',()=>{
+test('decryption: keeping the same case',()=>{
     expect(decrypt(5,'MjQQt')).toBe('HeLLo')
 })
 test.skip('decryption: keeps punctuations the same',()=>{
