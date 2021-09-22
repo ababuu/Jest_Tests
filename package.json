@@ -43,7 +43,9 @@
     "fast-json-stable-stringify": "^2.1.0",
     "jest": "^27.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.6"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -58,5 +60,4 @@
     "url": "https://github.com/ababuu/Jest_Tests/issues"
   },
   "homepage": "https://github.com/ababuu/Jest_Tests#readme"
-  
 }

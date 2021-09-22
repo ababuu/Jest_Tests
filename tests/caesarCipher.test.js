@@ -27,12 +27,12 @@ test('decrypts messages with a key of 5',()=>{
 test('decryption: keeping the same case',()=>{
     expect(decrypt(5,'MjQQt')).toBe('HeLLo')
 })
-test.skip('decryption: keeps punctuations the same',()=>{
+skip('decryption: keeps punctuations the same',()=>{
     expect(encrypt(5,'mjqqt!')).toBe('hello!');
 })
-test.skip('decryption: works with spaces',()=>{
+skip('decryption: works with spaces',()=>{
     expect(encrypt(5,'hello there')).toBe('mjqqt ymjwj');
 });
-test.skip('wrapping',()=>{
+skip('wrapping',()=>{
     expect(decrypt(1,'a')).toBe('z');
 });

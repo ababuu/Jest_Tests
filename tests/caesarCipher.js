@@ -1,6 +1,6 @@
 
 const punctuations=['!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','^','`','{','|','}','~',' '];
-function encrypt(key,message){
+export function encrypt(key,message){
     const convertedDigits=lettersToDigits(message);
     const encryptedDigits=convertedDigits.map((val)=>{
         let charCode=val+key;
@@ -16,7 +16,7 @@ function encrypt(key,message){
     return encryptedMessage;
 }
 
-function decrypt(key,message){
+export function decrypt(key,message){
     const convertedDigits=lettersToDigits(message);
     const decryptedDigits=convertedDigits.map((val)=>{
         let charCode=val-key;
@@ -62,4 +62,3 @@ function digitsToLetters(d){
     return word;
 }
 decrypt(2,'jgnnq');
-module.exports= {encrypt,decrypt};
