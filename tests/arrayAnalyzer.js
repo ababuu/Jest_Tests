@@ -5,7 +5,7 @@ export function analyze(array){
 
 function getAverage(array){
     const sum=array.reduce((a,b)=> a+b);
-    const arrayLength=array.length+1;
+    const arrayLength=array.length;
     const average=sum/arrayLength;
     return average;
 }
