@@ -1,6 +1,10 @@
 
 export function analyze(array){
     const object={};
+    object['average']=getAverage(array);
+    object['min']=getMin(array);
+    object['max']=getMax(array);
+    object['length']=getLength(array);
 }
 
 function getAverage(array){
@@ -14,4 +18,7 @@ function getMax(array){
 }
 function getMin(array){
     return Math.min(...array);
+}
+function getLength(array){
+    return array.length;
 }
