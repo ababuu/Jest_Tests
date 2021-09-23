@@ -5,6 +5,7 @@ export function analyze(array){
     object['min']=getMin(array);
     object['max']=getMax(array);
     object['length']=getLength(array);
+    return object;
 }
 
 function getAverage(array){
