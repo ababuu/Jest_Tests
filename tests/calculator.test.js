@@ -1,4 +1,4 @@
-const calculator =require('./calculator');
+const calculator =require('../code/calculator');
 
 test('adds two numbers',()=>{
     expect(calculator.add(1,2)).toBe(3);

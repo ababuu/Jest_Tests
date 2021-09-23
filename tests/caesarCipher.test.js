@@ -1,5 +1,5 @@
 const { test, expect } = require("@jest/globals");
-import {encrypt,decrypt} from './caesarCipher'
+import {encrypt,decrypt} from '../code/caesarCipher'
 test('encrypts messages with a key of 2',()=>{
     expect(encrypt(2,'hello')).toBe('jgnnq')
 });
@@ -27,12 +27,12 @@ test('decrypts messages with a key of 5',()=>{
 test('decryption: keeping the same case',()=>{
     expect(decrypt(5,'MjQQt')).toBe('HeLLo')
 })
-skip('decryption: keeps punctuations the same',()=>{
-    expect(encrypt(5,'mjqqt!')).toBe('hello!');
+test('decryption: keeps punctuations the same',()=>{
+    expect(decrypt(5,'mjqqt!')).toBe('hello!');
 })
-skip('decryption: works with spaces',()=>{
-    expect(encrypt(5,'hello there')).toBe('mjqqt ymjwj');
+test('decryption: works with spaces',()=>{
+    expect(decrypt(5,'mjqqt ymjwj')).toBe('hello there');
 });
-skip('wrapping',()=>{
+test('wrapping',()=>{
     expect(decrypt(1,'a')).toBe('z');
 });

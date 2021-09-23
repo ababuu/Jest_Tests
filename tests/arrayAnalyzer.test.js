@@ -1,5 +1,5 @@
 import { expect, test } from "@jest/globals";
-import {analyze} from './arrayAnalyzer';
+import {analyze} from '../code/arrayAnalyzer';
 test('analyzes the given array',()=>{
     const object = analyze([1,8,3,4,2,6]);
     object
